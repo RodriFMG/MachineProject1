@@ -29,7 +29,7 @@ if __name__ == "__main__":
     y = np.random.randint(0, 20, DataSize)
     y = normalization(y)
 
-    w, b, avgloss, AvgLossByIter, numIters = TrainModel(x, y, 0.045, 0.05,
+    w, b, avgloss, AvgLossByIter, numIters = TrainModel(x, y, 0.045, 0.03,
                                                         max_iters= 10 ** 4, Method="MAE")
 
     print( avgloss )

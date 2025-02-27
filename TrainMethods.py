@@ -18,9 +18,9 @@ def LinearRegression(x, y, w, b, Method="MSE", lambda_L1=0, lambda_L2=0):
     TotalData = len(y)
 
     if Method == "MSE":
-        loss = np.sum(MSE(y, y_pred)) / TotalData
+        loss = np.mean(MSE(y, y_pred))
     else:
-        loss = np.sum(MAE(y, y_pred)) / TotalData
+        loss = np.mean(MAE(y, y_pred))
 
     # Aplicar regularización L1 y L2
     loss += lambda_L1 * np.sum(np.abs(w)) + (lambda_L2 / 2) * np.sum(w ** 2)
@@ -34,15 +34,15 @@ def DerivateParams(x, y, w, b, Method="MSE", lambda_L1=0, lambda_L2=0):
     error = y - y_pred
 
     if Method == "MSE":
-        db = -np.sum(error) / TotalData
-        dw = -np.sum(error * x) / TotalData
+        db = -np.mean(error)
+        dw = -np.mean(error * x)
     else:
-        db = -np.sum(np.sign(error)) / TotalData
-        dw = -np.sum(np.sign(error) * x) / TotalData
+        db = -np.mean(np.sign(error))
+        dw = -np.mean(np.sign(error) * x)
 
     # Aplicar derivadas de regularización
-    dw += lambda_L2 * w + lambda_L1 * np.sign(w)  # L2 usa w, L1 usa signo(w)
-
+    dw += lambda_L2 * w
+    dw += lambda_L1 * np.sign(w)
     return db, dw
 
 
