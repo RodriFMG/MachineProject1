@@ -9,10 +9,11 @@ def MAE(RealValue, PredictValue):
     return abs(RealValue - PredictValue)
 
 
-# Method:
-# MSE or MAE.
-def LinearRegression(x, y, w, b, Method="MSE"):
+def ForwardPass(x, w, b):
+    return x * w + b
 
+
+def LinearRegression(x, y, w, b, Method="MSE", lambda_L1=0, lambda_L2=0):
     y_pred = ForwardPass(x, w, b)
     TotalData = len(y)
 
@@ -21,61 +22,54 @@ def LinearRegression(x, y, w, b, Method="MSE"):
     else:
         loss = np.sum(MAE(y, y_pred)) / TotalData
 
+    # Aplicar regularización L1 y L2
+    loss += lambda_L1 * np.sum(np.abs(w)) + (lambda_L2 / 2) * np.sum(w ** 2)
+
     return loss / 2
 
 
-def ForwardPass(x, w, b):
-    return  x * w + b
-
-
-def DerivateParams(x, y, w, b, Method="MSE"):
-
+def DerivateParams(x, y, w, b, Method="MSE", lambda_L1=0, lambda_L2=0):
     y_pred = ForwardPass(x, w, b)
     TotalData = len(y)
-    calcule = y - y_pred
+    error = y - y_pred
 
     if Method == "MSE":
-        db = -np.sum(calcule) / TotalData
-        dw = -np.sum(calcule * x) / TotalData
+        db = -np.sum(error) / TotalData
+        dw = -np.sum(error * x) / TotalData
     else:
-        db = -np.sum(np.sign(calcule)) / TotalData
-        dw = -np.sum(np.sign(calcule) * x) / TotalData
+        db = -np.sum(np.sign(error)) / TotalData
+        dw = -np.sum(np.sign(error) * x) / TotalData
 
+    # Aplicar derivadas de regularización
+    dw += lambda_L2 * w + lambda_L1 * np.sign(w)  # L2 usa w, L1 usa signo(w)
 
     return db, dw
 
 
 def UpdateParams(w, dw, b, db, lr):
-    updateW = w - lr * dw
-    updateB = b - lr * db
+    w -= lr * dw
+    b -= lr * db
+    return w, b
 
-    return updateW, updateB
 
-
-def TrainModel(x, y, umbral, lr, max_iters = 1000, Method="MSE"):
-
+def TrainModel(x, y, umbral, lr, max_iters=1000, Method="MSE", lambda_L1=0, lambda_L2=0):
     np.random.seed(42)
-
-    # si no lo definimos en el () el tamaño, se vuelve escalar.
     w = np.random.randn()
     b = 0.0
 
-    L = LinearRegression(x, y, w, b, Method)
+    L = LinearRegression(x, y, w, b, Method, lambda_L1, lambda_L2)
     AvgLoss = []
-
     i = 0
 
-
     while L > umbral and i < max_iters:
-
-        db, dw = DerivateParams(x, y, w, b, Method)
+        db, dw = DerivateParams(x, y, w, b, Method, lambda_L1, lambda_L2)
         w, b = UpdateParams(w, dw, b, db, lr)
 
         AvgLoss.append(L)
-        L = LinearRegression(x, y, w, b, Method)
+        L = LinearRegression(x, y, w, b, Method, lambda_L1, lambda_L2)
 
         i += 1
         if i % 20 == 0:
-            print(f"iteracion: {i} --> loss:{L}")
+            print(f"Iteración: {i} --> Pérdida: {L:.5f}")
 
     return b, w, np.mean(AvgLoss), AvgLoss, i
