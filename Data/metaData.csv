@@ -1,0 +1,92 @@
+"Variable","Descripción","Tipo de dato","Tamaño","Recurso relacionado","Información Adicional "
+"FECHA_CORTE","Fecha en el que se genero el dataset","Numérico",8,,"(formato : aaaammdd)"
+"ANO_EJE","Año de ejecución del presupuesto","Numérico",4,,"Período en que se ejecuta el Presupuesto y que coincide con el año calendario, es decir, se inicia el primero de enero y finaliza el treinta y uno de diciembre."
+"SECTOR","Código y nombre de Sector al que pertenece el Pliego Presupuestal
+40. DESARROLLO E INCLUSION SOCIAL","Alfanumérico",100,,"El Programa Nacional PAIS es un programa social adscrita al Ministerio de Desarrollo e Inclusión Social, que cuenta con autonomía técnica, administrativa, económica y financiera, que recibe un crédito presupuestario en la Ley Anual de Presupuesto del Sector Público."
+"PLIEGO","Código y nombre del pliego presupuestal al que pertenece la Entidad.
+040. MINISTERIO DE DESARROLLO E INCLUSION SOCIAL","Alfanumérico",100,,
+"UNIDAD_EJECUTORA","Código y nombre de la cadena institucional que identifica a una Entidad.
+008. PPROGRAMA NACIONAL PLATAFORMAS DE ACCION  PARA LA INCLUSION SOCIAL - PAIS","Alfanumérico",100,,"El PNPAIS cuenta con un nivel de desconcentración administrativa que: Determina  gastos; contrae compromisos, devenga gastos y informa sobre el avance y/o cumplimiento de metas."
+"SEC_EJEC","Código único que identifica a la unidad ejecutora ","Numérico",4,,
+"PROGRAMA_PPTAL","Código y nombre de la categoría presupuestal, el cual es un criterio de clasificación del gasto presupuestal","Alfanumérico",100,,"Metodología de presupuestación en que la ejecución del gasto se desarrolla orientada al beneficio de los usuarios de los servicios de prestados a través de los plataformas de servicio del programa"
+"TIPO_PROD_PROY","Código y nombre que identifica si es proyecto o producto.","Alfanumérico",100,,
+"PRODUCTO_PROYECTO","Código y nombre del producto o proyecto","Alfanumérico",100,,
+"TIPO_ACT_OBRA_ACCINV","Código y nombre del tipo de actividad, acción de inversión u obra","Alfanumérico",100,,
+"ACT_OBRA_ACCINV","Código y nombre de la actividad, acción de inversión u obra","Alfanumérico",100,,
+"FUNCION","Código y nombre de la Función.","Alfanumérico",100,,
+"DIVISION_FN","Código y nombre de División Funcional.","Alfanumérico",100,,
+"GRUPO_FN","Código y nombre del Grupo Funcional.","Alfanumérico",100,,
+"META","Código de la meta","Numérico",1,,"Expresión concreta y cuantificable que caracteriza el producto o productos finales de las Actividades y Proyectos establecidos para el año de ejecución "
+"FINALIDAD","Código y nombre de la finalidad.","Alfanumérico",100,,
+"UNIDAD_MEDIDA","Código y nombre de la unidad de medida","Alfanumérico",100,,
+"CANT_META_ANUAL","Cantidad de meta anual establecida","Numérico",10,,
+"CANT_META_SEM","Cantidad de meta establecida al semestre","Numérico",10,,
+"AVAN_FISICO_ANUAL","Información sobre la ejecución financiera anual y la ejecución de las metas físicas programadas de los productos de los Programas","Numérico",10,,
+"AVAN_FISICO_SEM","Información sobre la ejecución financiera semestral y la ejecución de las metas físicas programadas de los productos de los Programas","Numérico",10,,
+"SEC_FUNC","Número secuencial de las metas que tiene la Unidad Ejecutora","Numérico",2,,
+"DEPARTAMENTO","Código y nombre del departamento del ubigeo de la meta.","Texto",50,"Catalogo del INEI","Ubicación geografica del pliego"
+"PROVINCIA","Código y nombre de la provincia del departamento del ubigeo de la meta.","Texto",50,"Catalogo del INEI","Ubicación geografica del pliego"
+"DISTRITO","Código y nombre del distrito de la provincia del departamento del ubigeo de la meta","Texto",50,"Catalogo del INEI","Ubicación geografica del pliego"
+"UBIGEO","Codigo de ubicación geografica de la meta","Alfanumérico",6,"Catalogo del INEI",
+"FUENTE_FINANC","Código y nombre de la fuente de Financimiento que agrupa a uno o más Rubros.","Alfanumérico",100,,
+"RUBRO","Código y nombre del rubro que puede utilizar la Entidad.","Alfanumérico",100,,
+"CATEGORIA_GASTO","Código y nombre de la categoría de Gasto.","Alfanumérico",100,,
+"TIPO_TRANSACCION","Código y nombre de la transacción, para este reporte, siempre se presentará 2.GASTOS PRESUPUESTARIOS","Alfanumérico",100,,
+"GENERICA","Código y nombre de mayor nivel de agregación de los clasificadores de gasto.","Alfanumérico",100,,
+"SUBGENERICA","Código y nombre del nivel intermedio de agregación (subgenérica nivel 1) de los clasificadores de gasto.","Alfanumérico",100,,
+"SUBGENERICA_DET","Código y nombre del nivel intermedio de agregación (subgenérica nivel 2) de los clasificadores de gasto.","Alfanumérico",100,,
+"ESPECIFICA","Código y nombre de la específica nivel 1, identifica el detalle del gasto.","Alfanumérico",100,,
+"ESPECIFICA_DET","Código y nombre de la específica nivel 2, Identifica el detalle del gasto.","Alfanumérico",100,,
+"MTO_PIA","Monto asignado de Presupuesto Institucional de Apertura.","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_MODIFICACIONES","Monto de cambios en los créditos presupuestarios, tanto en su cuantía como en el nivel Institucional (créditos suplementarios y transferencias de partidas) y, en su caso, a nivel funcional programático (habilitaciones y anulaciones). ","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_PIM","Monto de Presupuesto Institucional Modificado.","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_CERTIFICADO","Monto del presupuesto certificado","Numérico",10,,"EJEMPLO: 12345.67  -  valor acumulado del certificacion que se realiza de manera permanente"
+"MTO_COMPRO_ANUAL","Monto del presupuesto utilizado en fase Compromiso anual, al nivel mostrado.","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_AT_COMP_01","Monto del presupuesto utilizado en fase Compromiso mensual, al mes de enero","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_AT_COMP_02","Monto del presupuesto utilizado en fase Compromiso mensual, al mes de febrero","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_AT_COMP_03","Monto del presupuesto utilizado en fase Compromiso mensual, al mes de marzo","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_AT_COMP_04","Monto del presupuesto utilizado en fase Compromiso mensual, al mes de abril","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_AT_COMP_05","Monto del presupuesto utilizado en fase Compromiso mensual, al mes de mayo","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_AT_COMP_06","Monto del presupuesto utilizado en fase Compromiso mensual, al mes de junio","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_AT_COMP_07","Monto del presupuesto utilizado en fase Compromiso mensual, al mes de julio","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_AT_COMP_08","Monto del presupuesto utilizado en fase Compromiso mensual, al mes de agosto","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_AT_COMP_09","Monto del presupuesto utilizado en fase Compromiso mensual, al mes de setiembre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_AT_COMP_10","Monto del presupuesto utilizado en fase Compromiso mensual, al mes de octubre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_AT_COMP_11","Monto del presupuesto utilizado en fase Compromiso mensual, al mes de noviembre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_AT_COMP_12","Monto del presupuesto utilizado en fase Compromiso mensual, al mes de diciembre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_DEVENGA_01","Monto ejecutado como fase Devengado mensual, al mes de enero","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_DEVENGA_02","Monto ejecutado como fase Devengado mensual, al mes de febrero","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_DEVENGA_03","Monto ejecutado como fase Devengado mensual, al mes de marzo","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_DEVENGA_04","Monto ejecutado como fase Devengado mensual, al mes de abril","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_DEVENGA_05","Monto ejecutado como fase Devengado mensual, al mes de mayo","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_DEVENGA_06","Monto ejecutado como fase Devengado mensual, al mes de junio","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_DEVENGA_07","Monto ejecutado como fase Devengado mensual, al mes de julio","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_DEVENGA_08","Monto ejecutado como fase Devengado mensual, al mes de agosto","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_DEVENGA_09","Monto ejecutado como fase Devengado mensual, al mes de setiembre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_DEVENGA_10","Monto ejecutado como fase Devengado mensual, al mes de octubre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_DEVENGA_11","Monto ejecutado como fase Devengado mensual, al mes de noviembre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_DEVENGA_12","Monto ejecutado como fase Devengado mensual, al mes de diciembre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_GIRADO_01","Monto ejecutado como fase girado mensual, al mes de enero","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_GIRADO_02","Monto ejecutado como fase girado mensual, al mes de febrero","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_GIRADO_03","Monto ejecutado como fase girado mensual, al mes de marzo","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_GIRADO_04","Monto ejecutado como fase girado mensual, al mes de abril","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_GIRADO_05","Monto ejecutado como fase girado mensual, al mes de mayo","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_GIRADO_06","Monto ejecutado como fase girado mensual, al mes de junio","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_GIRADO_07","Monto ejecutado como fase girado mensual, al mes de julio","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_GIRADO_08","Monto ejecutado como fase girado mensual, al mes de agosto","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_GIRADO_09","Monto ejecutado como fase girado mensual, al mes de setiembre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_GIRADO_10","Monto ejecutado como fase girado mensual, al mes de octubre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_GIRADO_11","Monto ejecutado como fase girado mensual, al mes de noviembre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_GIRADO_12","Monto ejecutado como fase girado mensual, al mes de diciembre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_PAGADO_01","Monto ejecutado como fase pagado mensual, al mes de enero","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_PAGADO_02","Monto ejecutado como fase pagado mensual, al mes de febrero","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_PAGADO_03","Monto ejecutado como fase pagado mensual, al mes de marzo","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_PAGADO_04","Monto ejecutado como fase pagado mensual, al mes de abril","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_PAGADO_05","Monto ejecutado como fase pagado mensual, al mes de mayo","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_PAGADO_06","Monto ejecutado como fase pagado mensual, al mes de junio","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_PAGADO_07","Monto ejecutado como fase pagado mensual, al mes de julio","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_PAGADO_08","Monto ejecutado como fase pagado mensual, al mes de agosto","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_PAGADO_09","Monto ejecutado como fase pagado mensual, al mes de setiembre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_PAGADO_10","Monto ejecutado como fase pagado mensual, al mes de octubre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_PAGADO_11","Monto ejecutado como fase pagado mensual, al mes de noviembre","Numérico",10,,"EJEMPLO: 12345.67"
+"MTO_PAGADO_12","Monto ejecutado como fase pagado mensual, al mes de diciembre","Numérico",10,,"EJEMPLO: 12345.67"

@@ -10,7 +10,8 @@ def MAE(RealValue, PredictValue):
 
 
 def ForwardPass(x, w, b):
-    return x * w + b
+    # @ igual que np.dot()
+    return x @ np.transpose(w) + b
 
 
 def LinearRegression(x, y, w, b, Method="MSE", lambda_L1=0, lambda_L2=0):
@@ -29,7 +30,9 @@ def LinearRegression(x, y, w, b, Method="MSE", lambda_L1=0, lambda_L2=0):
 
 
 def DerivateParams(x, y, w, b, Method="MSE", lambda_L1=0, lambda_L2=0):
+
     y_pred = ForwardPass(x, w, b)
+
     TotalData = len(y)
     error = y - y_pred
 
@@ -43,20 +46,27 @@ def DerivateParams(x, y, w, b, Method="MSE", lambda_L1=0, lambda_L2=0):
     # Aplicar derivadas de regularización
     dw += (lambda_L2 / len(y)) * w
     dw += lambda_L1 * np.sign(w)
+
     return db, dw
 
 
 def UpdateParams(w, dw, b, db, lr):
+
     w -= lr * dw
     b -= lr * db
+
     return w, b
 
 
 def TrainModel(x, y, umbral, lr, max_iters=1000, Method="MSE", lambda_L1=0, lambda_L2=0):
+
     np.random.seed(42)
 
-    w = np.random.rand()
-    b = np.random.rand()
+    numColumns = x.shape[1]
+    numFilas = x.shape[0]
+
+    w = np.random.rand(1, numColumns)
+    b = np.random.rand(numFilas, 1)
 
     L = LinearRegression(x, y, w, b, Method, lambda_L1, lambda_L2)
     AvgLoss = []
