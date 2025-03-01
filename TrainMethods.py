@@ -54,8 +54,9 @@ def UpdateParams(w, dw, b, db, lr):
 
 def TrainModel(x, y, umbral, lr, max_iters=1000, Method="MSE", lambda_L1=0, lambda_L2=0):
     np.random.seed(42)
-    w = np.random.randn()
-    b = 0.0
+
+    w = np.random.rand()
+    b = np.random.rand()
 
     L = LinearRegression(x, y, w, b, Method, lambda_L1, lambda_L2)
     AvgLoss = []
