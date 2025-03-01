@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     # Entrenamiento del modelo
     w, b, avgloss, AvgLossByIter, numIters = TrainModel(x_norm1, y_norm1, 0.001, 0.01,
-                                                        max_iters=10 ** 5, Method="MAE")
+                                                        max_iters=10 ** 3, Method="MAE")
     print(f"\nw: {w} \nb:{b}")
 
     # Predicción normalizada
