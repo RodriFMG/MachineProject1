@@ -41,7 +41,7 @@ def DerivateParams(x, y, w, b, Method="MSE", lambda_L1=0, lambda_L2=0):
         dw = -np.mean(np.sign(error) * x)
 
     # Aplicar derivadas de regularización
-    dw += lambda_L2 * w
+    dw += (lambda_L2 / len(y)) * w
     dw += lambda_L1 * np.sign(w)
     return db, dw
 
@@ -70,7 +70,7 @@ def TrainModel(x, y, umbral, lr, max_iters=1000, Method="MSE", lambda_L1=0, lamb
         L = LinearRegression(x, y, w, b, Method, lambda_L1, lambda_L2)
 
         i += 1
-        if i % 20 == 0:
+        if i % 10 == 0:
             print(f"Iteración: {i} --> Pérdida: {L:.5f}")
 
-    return b, w, np.mean(AvgLoss), AvgLoss, i
+    return w, b, np.mean(AvgLoss), AvgLoss, i
