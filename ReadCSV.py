@@ -10,8 +10,13 @@ def ReadCSVData(CSVPath, Campos):
     return np.array([df[CampoName].tolist() for CampoName in Campos])
 
 
-def ObtainXandY(CSVPath, Campos):
+def ObtainTrain(CSVPath, Campos):
     x = ReadCSVData(CSVPath, Campos)
     y = ReadCSVData(CSVPath, ["MTO_PIA"])
 
     return x, y
+
+
+def ObtainTest(CSVPath, Campos):
+    x = ReadCSVData(CSVPath, Campos)
+    return x[:, 0:1464]

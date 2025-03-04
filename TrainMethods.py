@@ -11,7 +11,7 @@ def MAE(RealValue, PredictValue):
 
 def ForwardPass(x, w, b):
     # @ igual que np.dot()
-    return x @ np.transpose(w) + b
+    return x @ w.T + b
 
 
 def LinearRegression(x, y, w, b, Method="MSE", lambda_L1=0, lambda_L2=0):
@@ -66,7 +66,7 @@ def TrainModel(x, y, umbral, lr, max_iters=1000, Method="MSE", lambda_L1=0, lamb
     numFilas = x.shape[0]
 
     w = np.random.rand(1, numColumns)
-    b = np.random.rand(numFilas, 1)
+    b = np.ones((numFilas, 1))
 
     L = LinearRegression(x, y, w, b, Method, lambda_L1, lambda_L2)
     AvgLoss = []
